@@ -1,81 +1,72 @@
 @import 'tailwindcss';
 
-:root {
-	font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-	line-height: 1.5;
-	font-weight: 400;
+.btn{
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 4px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: 0.3s;
+    border: 1px solid #d5d5d5;
+    box-sizing: border-box;
+    margin: 5px 10px;
+    color: white;
+    text-align: center;
 
-	color-scheme: light dark;
-	color: rgba(255, 255, 255, 0.87);
-	background-color: #242424;
+    &:hover{
+        background-color: #ffb700;
+    }
 
-	font-synthesis: none;
-	text-rendering: optimizeLegibility;
-	-webkit-font-smoothing: antialiased;
-	-moz-osx-font-smoothing: grayscale;
-}
-
-a {
-	font-weight: 500;
-	color: #646cff;
-	text-decoration: inherit;
-}
-a:hover {
-	color: #535bf2;
+    &:active{
+        background-color: #d6d1d1;
+    }
 }
 
-body {
-	margin: 0;
-	display: flex;
-	place-items: center;
-	min-width: 320px;
-	min-height: 100vh;
+
+.btn-red{
+    background-color: #dc3545;
 }
 
-h1 {
-	font-size: 3.2em;
-	line-height: 1.1;
+.btn-green{
+    background-color: #4caf50;
 }
 
-button {
-	border-radius: 8px;
-	border: 1px solid transparent;
-	padding: 0.6em 1.2em;
-	font-size: 1em;
-	font-weight: 500;
-	font-family: inherit;
-	background-color: #1a1a1a;
-	cursor: pointer;
-	transition: border-color 0.25s;
-}
-button:hover {
-	border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-	outline: 4px auto -webkit-focus-ring-color;
+.btn-blue{
+    background-color: #008cff;
 }
 
-.card {
-	padding: 2em;
+
+.form{
+    display: block;
+    margin: 10px auto;
+    max-width: 500px;
+    padding: 15px;
+    /*background: #008cff;*/
+    border: 1px solid #d5d5d5;
+    border-radius: 5px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 8px 0 rgba(0, 196, 255, 0.2), 0 6px 20px 0 rgba(0, 89, 255, 0.19);
 }
 
-#app {
-	max-width: 1280px;
-	margin: 0 auto;
-	padding: 2rem;
-	text-align: center;
+.form-group{
+    display: flex;
+    flex-direction: column;
 }
 
-@media (prefers-color-scheme: light) {
-	:root {
-		color: #213547;
-		background-color: #ffffff;
-	}
-	a:hover {
-		color: #747bff;
-	}
-	button {
-		background-color: #f9f9f9;
-	}
+.form-group input{
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid #0080ff;
+    border-radius: 5px;
+}
+
+
+.btn-100{
+    width: 100%;
+    padding: 10px;
+    margin: 0 auto;
+
 }
