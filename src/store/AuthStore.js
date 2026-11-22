@@ -1,5 +1,6 @@
 import {defineStore} from "pinia";
 import axios from "axios";
+import {authApi} from "../api/authApi.js";
 
 
 
@@ -17,10 +18,8 @@ export const useAuthStore = defineStore('auth',{
     actions: {
         async login(data) {
             try{
-                let response = await axios.post(this.url+'/auth/login', data);
-                console.log(response);
-                console.log(response.data);
-                localStorage.setItem('token',response.data.access_token);
+                let response = await authApi.login(data);
+                localStorage.setItem('token',response.access_token);
                 this.token = response.data.access_token;
             }catch(error){
                 if(error.response){

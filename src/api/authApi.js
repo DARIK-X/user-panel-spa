@@ -1,8 +1,8 @@
 import {api} from "./api.js";
 
 export const authApi = {
-    regist(data){
-        return api.post(`auth/regist`, data).then(res => res.data)
+    register(data){
+        return api.post(`auth/register`, data).then(res => res.data)
     },
     login(data){
         return api.post(`auth/login`, data).then(res => res.data)
