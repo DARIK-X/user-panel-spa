@@ -1,5 +1,4 @@
 import axios from 'axios';
-import {useAuthStore} from "../store/AuthStore.js";
 
 
 export const api = axios.create({
@@ -25,8 +24,11 @@ api.interceptors.response.use(
         return response;
     },
     (err)=>{
+        const data = err.response?.data;
+        const status = err.response?.status;
+
         if(err.response?.status === 401){
-            useAuthStore().logout()
+            localStorage.removeItem("token");
         }
 
 
