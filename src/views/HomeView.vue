@@ -1,7 +1,6 @@
 <script setup>
-import axios from 'axios';
-import {useRouter} from "vue-router";
 import {onMounted, reactive, ref} from "vue";
+import {advertsApi} from "../api/advertsApi.js";
 
 const adverts = ref([])
 
@@ -9,8 +8,7 @@ const adverts = ref([])
 
 async function loadAdverts(data){
   try {
-    let response = await axios.get('https://module-c/api/adverts',data);
-    adverts.value = response.data;
+    adverts.value = await advertsApi.getList()
   }catch(err){
     console.log(err);
   }
@@ -24,7 +22,7 @@ onMounted(() => {
 </script>
 
 <template>
-
+<h1>Hello world</h1>
 
 
 

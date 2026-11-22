@@ -2,45 +2,38 @@ import {createRouter, createWebHistory} from 'vue-router';
 import {useAuthStore} from "../store/AuthStore.js";
 
 
-import HomeView from "../views/HomeView.vue";
-import LoginView from "../views/LoginView.vue";
-import RegisterView from "../views/RegisterView.vue";
-import ProfileView from "../views/ProfileView.vue";
-import MyAdvertView from "../views/MyAdvertView.vue";
-import AdvertDetail from "../views/AdvertDetail.vue";
-
 const routes = [
     {
         path: '/',
         name: 'home',
-        component: HomeView,
+        component: import("../views/HomeView.vue"),
     },
     {
         path: '/login',
         name: 'login',
-        component: LoginView,
+        component: import("../views/LoginView.vue"),
         meta: {guest: true},
     },
     {
         path: '/register',
         name: 'register',
-        component: RegisterView,
+        component: import("../views/RegisterView.vue"),
         meta: {guest: true},
     },{
         path: '/profile',
         name: 'profile',
-        component: ProfileView,
+        component: import("../views/ProfileView.vue"),
         meta: {isAuth: true},
     },{
         path: '/adverts/:id',
         name: 'advert detail page',
-        component: AdvertDetail ,
+        component: import("../views/AdvertDetail.vue") ,
         meta: {isAuth: true},
     },
     {
         path: '/user/adverts',
         name: 'user detail page',
-        component: MyAdvertView,
+        component: import("../views/MyAdvertView.vue"),
         meta: {isAuth: true},
     }
 ]
